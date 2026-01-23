@@ -1,6 +1,6 @@
 {
-  "name": "Neuro Translate",
-  "short_name": "NeuroTranslate",
+  "name": "NeuroTranslate",
+  "short_name": "NT",
   "icons": [
     {
       "src": "/favicons/web-app-manifest-192x192.png",
