@@ -1,42 +1,35 @@
-# sv
+# NeuroTranslate [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Gautierpicon/NeuroTranslate/blob/main/LICENSE.md)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Open. Paste. Translate.
 
-## Creating a project
+## Feedback
 
-If you're seeing this, you've probably already done this step. Congrats!
+Feedback are welcome! Feel free to open an [issue](https://github.com/Gautierpicon/NeuroTranslate/issues) or a [pull request](https://github.com/Gautierpicon/NeuroTranslate/pulls) on the GitHub repository.
 
-```sh
-# create a new project
-npx sv create my-app
+## Contribute / Run Locally
+
+You will need to have [Bun](https://bun.sh/) installed.
+
+Clone the project
+
+```bash
+git clone https://github.com/Gautierpicon/Bingo
 ```
 
-To recreate this project with the same configuration:
+Go to the project directory
 
-```sh
-# recreate this project
-bun x sv create --template minimal --types jsdoc --add prettier eslint tailwindcss="plugins:none" --install bun my-app
+```bash
+cd bingo
 ```
 
-## Developing
+Install dependencies
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```bash
+bun install
 ```
 
-## Building
+Start the server
 
-To create a production version of your app:
-
-```sh
-npm run build
+```bash
+bun run dev
 ```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
