@@ -13,13 +13,13 @@ You will need to have [Bun](https://bun.sh/) installed.
 Clone the project
 
 ```bash
-git clone https://github.com/Gautierpicon/Bingo
+git clone https://github.com/Gautierpicon/NeuroTranslate
 ```
 
 Go to the project directory
 
 ```bash
-cd bingo
+cd NeuroTranslate
 ```
 
 Install dependencies
