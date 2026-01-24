@@ -1,25 +1,37 @@
-<script>
+<script lang="ts">
 	import Header from '$lib/components/header.svelte';
 
-	let sourceText = '';
-	let targetText = '';
-	let loading = false;
+	let sourceText: string = '';
+	let targetText: string = '';
+	let loading: boolean = false;
+	let timeout: ReturnType<typeof setTimeout>;
 
-	const languages = ['French', 'English', 'Spanish', 'German', 'Japanese'];
+	const languages: string[] = ['French', 'English', 'Spanish', 'German', 'Japanese'];
 
-	async function translate() {
+	async function translate(text: string): Promise<void> {
+		if (!text) {
+			targetText = '';
+			return;
+		}
+
 		loading = true;
 
 		const res = await fetch('/api/translate', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ text: sourceText })
+			body: JSON.stringify({ text })
 		});
 
-		const data = await res.json();
+		const data: { translation: string } = await res.json();
 		targetText = data.translation;
-
 		loading = false;
+	}
+
+	$: {
+		clearTimeout(timeout);
+		timeout = setTimeout(() => {
+			translate(sourceText);
+		}, 300);
 	}
 </script>
 
@@ -70,13 +82,6 @@
 					placeholder="Write or paste your text here."
 					class="w-full resize-none border-r border-none p-4 text-2xl placeholder-gray-300 outline-none focus:ring-0"
 				></textarea>
-				<button
-					on:click={translate}
-					class="mb-4 rounded bg-blue-600 px-4 py-2 text-white disabled:opacity-50"
-					disabled={!sourceText || loading}
-				>
-					{loading ? 'Translation...' : 'Translate'}
-				</button>
 			</div>
 
 			<div class="rounded-br-xl bg-gray-50 p-4 text-2xl">
