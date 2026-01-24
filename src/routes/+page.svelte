@@ -76,11 +76,11 @@
 		<div
 			class="grid min-h-[300px] grid-cols-1 rounded-b-xl border border-t-0 bg-white shadow-lg md:grid-cols-2"
 		>
-			<div class="border-r p-4">
+			<div class="border-r">
 				<textarea
 					bind:value={sourceText}
 					placeholder="Write or paste your text here."
-					class="w-full resize-none border-r border-none p-4 text-2xl placeholder-gray-300 outline-none focus:ring-0"
+					class="w-full h-full resize-none border-r border-none p-4 text-2xl placeholder-gray-300 outline-none focus:ring-0"
 				></textarea>
 			</div>
 
