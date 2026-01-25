@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let sourceText: string;
 	export let targetText: string;
+	export let loading: boolean = false;
 </script>
 
 <div
@@ -15,6 +16,13 @@
 	</div>
 
 	<div class="relative rounded-br-xl bg-gray-50 p-6 text-2xl text-gray-800">
-		{targetText}
+		{#if loading}
+			<div class="flex items-center gap-2 text-gray-400">
+				<div class="h-4 w-4 animate-spin rounded-full border-2 border-blue-600 border-t-transparent"></div>
+				<span class="text-base">Translating...</span>
+			</div>
+		{:else}
+			{targetText}
+		{/if}
 	</div>
 </div>

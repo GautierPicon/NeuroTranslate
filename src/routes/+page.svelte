@@ -57,6 +57,6 @@
 	<div class="mx-auto max-w-6xl pt-5">
 		<LanguageToolbar bind:sourceLang bind:targetLang {languages} onSwap={swapLanguages} />
 
-		<TranslationPanel bind:sourceText {targetText}/>
+		<TranslationPanel bind:sourceText {targetText} {loading} />
 	</div>
 </main>
