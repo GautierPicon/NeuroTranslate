@@ -3,18 +3,18 @@
 	export let languages: string[];
 	export let showDetect: boolean = false;
 	export let alignment: 'left' | 'right' = 'left';
-
-	let showMenu = false;
+	export let showMenu: boolean = false;
+	export let onToggle: () => void;
 
 	function selectLanguage(lang: string) {
 		selectedLang = lang;
-		showMenu = false;
+		onToggle();
 	}
 </script>
 
 <div class="relative py-2">
 	<button
-		on:click={() => (showMenu = !showMenu)}
+		on:click={onToggle}
 		class="flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-bold text-blue-600 transition hover:bg-gray-100"
 	>
 		{selectedLang}
@@ -36,12 +36,18 @@
 
 	{#if showMenu}
 		<div
-			class="absolute top-full z-20 mt-1 w-64 rounded-lg border bg-white shadow-xl {alignment === 'right' ? 'right-0' : 'left-0'}"
+			class="absolute top-full z-20 mt-1 w-64 rounded-lg border bg-white shadow-xl {alignment ===
+			'right'
+				? 'right-0'
+				: 'left-0'}"
 		>
 			<div class="grid grid-cols-1 gap-1 p-2">
 				{#if showDetect}
 					<button
-						class="rounded px-4 py-2 text-left text-sm hover:bg-blue-50 {selectedLang === 'Detect language' ? 'bg-blue-100 text-blue-700' : ''}"
+						class="rounded px-4 py-2 text-left text-sm hover:bg-blue-50 {selectedLang ===
+						'Detect language'
+							? 'bg-blue-100 text-blue-700'
+							: ''}"
 						on:click={() => selectLanguage('Detect language')}
 					>
 						Detect language
@@ -50,7 +56,9 @@
 				{/if}
 				{#each languages as lang}
 					<button
-						class="rounded px-4 py-2 text-left text-sm hover:bg-gray-100 {selectedLang === lang ? 'bg-gray-100 font-bold' : ''}"
+						class="rounded px-4 py-2 text-left text-sm hover:bg-gray-100 {selectedLang === lang
+							? 'bg-gray-100 font-bold'
+							: ''}"
 						on:click={() => selectLanguage(lang)}
 					>
 						{lang}

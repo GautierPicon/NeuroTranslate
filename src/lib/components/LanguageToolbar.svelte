@@ -7,6 +7,16 @@
 	export let onSwap: () => void;
 
 	$: canSwap = sourceLang !== 'Detect language';
+	
+	let openMenu: 'source' | 'target' | null = null;
+
+	function toggleSourceMenu() {
+		openMenu = openMenu === 'source' ? null : 'source';
+	}
+
+	function toggleTargetMenu() {
+		openMenu = openMenu === 'target' ? null : 'target';
+	}
 </script>
 
 <div class="flex items-center justify-center rounded-t-xl border bg-white px-4 shadow-sm">
@@ -16,6 +26,8 @@
 			{languages}
 			showDetect={true}
 			alignment="right"
+			showMenu={openMenu === 'source'}
+			onToggle={toggleSourceMenu}
 		/>
 	</div>
 
@@ -46,6 +58,12 @@
 	</div>
 
 	<div class="flex flex-1 justify-start">
-		<LanguageSelector bind:selectedLang={targetLang} {languages} alignment="left" />
+		<LanguageSelector
+			bind:selectedLang={targetLang}
+			{languages}
+			alignment="left"
+			showMenu={openMenu === 'target'}
+			onToggle={toggleTargetMenu}
+		/>
 	</div>
 </div>
