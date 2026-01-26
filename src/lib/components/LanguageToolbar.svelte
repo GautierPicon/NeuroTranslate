@@ -22,7 +22,7 @@
 	<div class="px-2">
 		<button
 			on:click={onSwap}
-			class="p-2 text-gray-700 transition hover:text-blue-600 disabled:opacity-30"
+			class="p-2 text-gray-700 transition rounded-md hover:bg-gray-100 hover:text-blue-600 disabled:opacity-30"
 			disabled={!canSwap}
 			aria-label="Swap languages"
 			title="Swap languages"
