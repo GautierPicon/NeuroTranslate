@@ -5,10 +5,15 @@
 	export let alignment: 'left' | 'right' = 'left';
 	export let showMenu: boolean = false;
 	export let onToggle: () => void;
+	export let disabledLang: string | null = null;
 
 	function selectLanguage(lang: string) {
 		selectedLang = lang;
 		onToggle();
+	}
+
+	function isDisabled(lang: string): boolean {
+		return disabledLang === lang;
 	}
 </script>
 
@@ -56,10 +61,11 @@
 				{/if}
 				{#each languages as lang}
 					<button
-						class="rounded px-4 py-2 text-left text-sm hover:bg-gray-100 {selectedLang === lang
-							? 'bg-gray-100 font-bold'
-							: ''}"
-						on:click={() => selectLanguage(lang)}
+						class="rounded px-4 py-2 text-left text-sm {isDisabled(lang)
+							? 'cursor-not-allowed opacity-50'
+							: 'hover:bg-gray-100'} {selectedLang === lang ? 'bg-gray-100 font-bold' : ''}"
+						on:click={() => !isDisabled(lang) && selectLanguage(lang)}
+						disabled={isDisabled(lang)}
 					>
 						{lang}
 					</button>
