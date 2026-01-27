@@ -47,6 +47,9 @@
 			const temp = sourceLang;
 			sourceLang = targetLang;
 			targetLang = temp;
+
+			const tempText = sourceText;
+			sourceText = targetText;
 		}
 	}
 </script>
