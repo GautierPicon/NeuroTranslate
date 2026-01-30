@@ -1,0 +1,56 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: '[Bug] '
+labels: ['bug']
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Briefly describe the bug you encountered
+      placeholder: 'Describe what happened...'
+    validations:
+      required: false
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What you expected to happen
+      placeholder: 'Describe what should have happened...'
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened
+      placeholder: 'Describe what actually happened...'
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Environment information (optional)
+      placeholder: |
+        OS: [e.g. macOS, Windows, Linux]
+        Browser: [e.g. Chrome, Firefox, Safari]
+        Version: [e.g. 1.0.0]
+    validations:
+      required: false

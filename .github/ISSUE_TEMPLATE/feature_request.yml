@@ -1,0 +1,40 @@
+name: Feature Request
+description: Suggest a new feature or enhancement
+title: '[Feature] '
+labels: ['enhancement']
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature description
+      description: Briefly describe the feature you would like to see
+      placeholder: 'Describe the feature you would like...'
+    validations:
+      required: false
+
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use case
+      description: How would this feature help you?
+      placeholder: 'Explain how this feature would benefit you...'
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative solutions
+      description: Have you considered any alternative solutions?
+      placeholder: "Describe any alternatives you've considered..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Any other relevant information
+      placeholder: 'Add any other context or screenshots...'
+    validations:
+      required: false
