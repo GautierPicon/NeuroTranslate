@@ -28,7 +28,7 @@
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
 				fill="currentColor"
-				class="size-5"
+				class="size-5 {showMenu ? 'translate-y-0.5 rotate-180' : ''}"
 			>
 				<path
 					fill-rule="evenodd"
