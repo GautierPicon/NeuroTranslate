@@ -1,3 +1,5 @@
+![header](.github/readme-header.png)
+
 # NeuroTranslate [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/Gautierpicon/NeuroTranslate/blob/main/LICENSE.md)
 
 Open. Paste. Translate.
