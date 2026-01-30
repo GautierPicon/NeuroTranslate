@@ -30,6 +30,12 @@ Install dependencies
 bun install
 ```
 
+Download the model with Ollama
+
+```bash
+ollama run translategemma:4b
+```
+
 Start the server
 
 ```bash
