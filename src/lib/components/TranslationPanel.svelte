@@ -1,10 +1,15 @@
 <script lang="ts">
 	export let sourceText: string;
 	export let targetText: string;
+	let showSuccessIcon = false;
 
 	function copyToClipboard() {
 		if (!targetText) return;
 		navigator.clipboard.writeText(targetText);
+		showSuccessIcon = true;
+		setTimeout(() => {
+			showSuccessIcon = false;
+		}, 700);
 	}
 </script>
 
@@ -28,27 +33,57 @@
 			on:click={copyToClipboard}
 			class="absolute right-4 bottom-4 cursor-pointer rounded-md p-1.5 text-gray-700 transition hover:bg-gray-100"
 		>
-			<svg
-				width="30px"
-				height="30px"
-				viewBox="0 0 1024 1024"
-				xmlns="http://www.w3.org/2000/svg"
-				fill="#000000"
-				transform="matrix(-1, 0, 0, 1, 0, 0)rotate(180)"
-			>
-				<g id="SVGRepo_bgCarrier" stroke-width="0" />
-				<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-				<g id="SVGRepo_iconCarrier">
-					<path
-						fill="#000000"
-						d="M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z"
-					/>
-					<path
-						fill="#000000"
-						d="M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z"
-					/>
-				</g>
-			</svg>
+			{#if showSuccessIcon}
+				<svg
+					width="30px"
+					height="30px"
+					viewBox="0 0 24.00 24.00"
+					role="img"
+					xmlns="http://www.w3.org/2000/svg"
+					aria-labelledby="okIconTitle"
+					stroke="#000000"
+					stroke-width="2.4"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					fill="none"
+					color="#000000"
+				>
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g
+						id="SVGRepo_tracerCarrier"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke="#000000"
+						stroke-width="0.048"
+					></g>
+					<g id="SVGRepo_iconCarrier">
+						<title id="okIconTitle">Ok</title>
+						<polyline points="4 13 9 18 20 7"></polyline>
+					</g>
+				</svg>
+			{:else}
+				<svg
+					width="30px"
+					height="30px"
+					viewBox="0 0 1024 1024"
+					xmlns="http://www.w3.org/2000/svg"
+					fill="#000000"
+					transform="matrix(-1, 0, 0, 1, 0, 0)rotate(180)"
+				>
+					<g id="SVGRepo_bgCarrier" stroke-width="0" />
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
+					<g id="SVGRepo_iconCarrier">
+						<path
+							fill="#000000"
+							d="M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z"
+						/>
+						<path
+							fill="#000000"
+							d="M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z"
+						/>
+					</g>
+				</svg>
+			{/if}
 		</button>
 	</div>
 </div>
