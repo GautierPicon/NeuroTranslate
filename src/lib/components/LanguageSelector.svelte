@@ -23,7 +23,7 @@
 		class="flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-bold text-blue-600 transition hover:bg-gray-100"
 	>
 		{selectedLang}
-		<span class="text-[10px] text-gray-400">
+		<span class="text-[10px] text-blue-600">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
