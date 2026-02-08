@@ -6,7 +6,7 @@ Open. Paste. Translate.
 
 ## Feedback
 
-Feedback are welcome! Feel free to open an [issue](https://github.com/Gautierpicon/NeuroTranslate/issues) or a [pull request](https://github.com/Gautierpicon/NeuroTranslate/pulls) on the GitHub repository.
+Feedback are welcome! Feel free to open an [issue](https://github.com/GautierPicon/NeuroTranslate/issues) or a [pull request](https://github.com/GautierPicon/NeuroTranslate/pulls) on the GitHub repository.
 
 ## Contribute / Run Locally
 
@@ -15,7 +15,7 @@ You will need to have [Bun](https://bun.sh/) installed.
 Clone the project
 
 ```bash
-git clone https://github.com/Gautierpicon/NeuroTranslate
+git clone https://github.com/GautierPicon/NeuroTranslate
 ```
 
 Go to the project directory
